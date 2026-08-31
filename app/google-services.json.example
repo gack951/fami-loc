@@ -1,0 +1,14 @@
+{
+  "project_info": {
+    "project_number": "123456789000",
+    "project_id": "fami-loc-ci"
+  },
+  "client": [{
+    "client_info": {
+      "mobilesdk_app_id": "1:123456789000:android:0000000000000000",
+      "android_client_info": { "package_name": "jp.familoc" }
+    },
+    "api_key": [{ "current_key": "AIzaSyCIPlaceholderNotUsableAtRuntime0000000" }]
+  }],
+  "configuration_version": "1"
+}
