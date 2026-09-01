@@ -1,6 +1,7 @@
 package jp.familoc
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -40,6 +41,7 @@ class LocationForegroundService : Service() {
 
     override fun onBind(intent: android.content.Intent?): IBinder? = null
 
+    @SuppressLint("MissingPermission") // requirePermissionsAndLocation() runs before the location API call.
     override fun onStartCommand(intent: android.content.Intent?, flags: Int, startId: Int): Int {
         val id = intent?.getStringExtra(REQUEST_ID) ?: return stopNow()
         if (requestId != null) {
