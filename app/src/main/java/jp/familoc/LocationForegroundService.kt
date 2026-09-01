@@ -97,7 +97,10 @@ class LocationForegroundService : Service() {
         if (!finished.compareAndSet(false, true)) return
         handler.removeCallbacksAndMessages(null)
         client.removeLocationUpdates(callback)
-        val id = requestId ?: return stopNow()
+        val id = requestId ?: run {
+            stopNow()
+            return
+        }
         executor.execute {
             try {
                 if (location == null) Backend.postStatus(id, "timeout", "no_location")
